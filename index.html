@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StudySync</title>
+  <link rel="stylesheet" href="style.css" />
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">StudySync</div>
+  <button id="mode-toggle" class="mode-toggle" title="Toggle Dark Mode">🌙</button>
+    <div class="hamburger">☰</div>
+
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#newsletter">Newsletter</a></li>
+  </ul>
+</nav>
+
+
+
+<header class="hero  hero-section" id="hero-section">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 id="typed-text"></h1>
+     <p>Join thousands of students using <strong>StudySync</strong> to achieve their goals through quality education and resources.</p>
+    <a href="#" class="cta-button"> Get Started</a>
+  </div>
+</header>
+ <section class="quote-box ">
+  <h2>📘 Daily Study Quote</h2>
+  <p id="quote-text">Loading...</p>
+</section>
+<section class="attention-test">
+  <h2>🧠 How Focused Are You?</h2>
+  <div id="test-box">
+    <p id="test-message">Click the button to test your attention.</p>
+    <button id="start-test-btn">Start Test</button>
+    <div id="options" style="display: none;">
+      <button class="option-btn">Option 1</button>
+      <button class="option-btn">Option 2</button>
+      <button class="option-btn">Option 3</button>
+      <button class="option-btn">Option 4</button>
+    </div>
+    <p id="result"></p>
+  </div>
+</section>
+
+
+
+  
+  <section class="features" id="features">
+    <h2>Why Choose StudySync?</h2>
+    <div class="feature-cards">
+      <div class="feature">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Affordable" />
+        <h3>Affordable</h3>
+        <p>High-quality education accessible to everyone at an affordable price.</p>
+      </div>
+      <div class="feature">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="Interactive" />
+        <h3>Interactive</h3>
+        <p>Engaging tools and real-time doubt-solving to make learning fun and effective.</p>
+      </div>
+      <div class="feature">
+        <img src="https://cdn-icons-png.flaticon.com/512/1256/1256650.png" alt="Accessible" />
+        <h3>Accessible</h3>
+        <p>Study anytime, anywhere with our responsive platform on all devices.</p>
+      </div>
+      <div class="feature">
+        <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="Expert Teachers" />
+        <h3>Expert Teachers</h3>
+        <p>Learn from industry-leading educators and professionals.</p>
+      </div>
+    </div>
+  </section>
+
+  
+<section class="testimonials" id="testimonials">
+  <h2>What Our Students Say</h2>
+  <div class="testimonial-container">
+    <div class="testimonial active">
+      <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson" />
+      <h4>Sarah Johnson</h4>
+      <p>"StudySync transformed the way I learn. I feel more confident and motivated!"</p>
+    </div>
+    <div class="testimonial">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="David Lee" />
+      <h4>David Lee</h4>
+      <p>"With flexible schedules and great resources, StudySync helped me excel academically."</p>
+    </div>
+      <div class="testimonial">
+      <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Emily Clark" />
+      <h4>Emily Clark</h4>
+      <p>"The community and mentors are so supportive. Highly recommended!"</p>
+    </div>
+    <div class="testimonial">
+      <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="James Smith" />
+      <h4>James Smith</h4>
+      <p>"A perfect platform to enhance your skills and stay productive every day."</p>
+    </div>
+    <div class="testimonial">
+      <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Olivia Brown" />
+      <h4>Olivia Brown</h4>
+      <p>"I cracked my college entrance exam thanks to the amazing resources here!"</p>
+    </div>
+    <div class="testimonial">
+      <img src="https://randomuser.me/api/portraits/men/18.jpg" alt="Michael Davis" />
+      <h4>Michael Davis</h4>
+      <p>"Their Pomodoro and planning features helped me stay consistent with my studies."</p>
+    </div>
+  </div>
+
+  
+  <div class="testimonial-nav">
+    
+    <button id="prevTestimonial" class="nav-btn">
+  <i class="fas fa-chevron-left"></i>
+</button>
+<button id="nextTestimonial" class="nav-btn">
+  <i class="fas fa-chevron-right"></i>
+</button>
+
+  </div>
+</section>
+
+
+  
+ <section class="newsletter-section" id="newsletter">
+  <div class="newsletter-container">
+    <div class="newsletter-text fade-in">
+      <h2>Stay Updated</h2>
+      <p>Subscribe to get the latest updates, events & study tips directly to your inbox.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+    <div class="newsletter-image slide-in">
+      <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=1050&q=80" alt="Newsletter Visual" />
+    </div>
+  </div>
+</section>
+
+
+  <section id="contact" class="contact-section">
+  <h2>Contact Me</h2>
+  <form class="contact-form" id="contact-form" action="https://formspree.io/f/mldlnvvp" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    <input type="hidden" name="_captcha" value="false">
+    <button type="submit">Send Message</button>
+  </form>
+  <p class="form-response" id="form-response"></p>
+</section>
+
+
+
+ <footer class="footer">
+  <div class="footer-content">
+    <div class="footer-links">
+      <a href="#about"><i class="fas fa-user"></i> About</a>
+      <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+      <a href="#terms"><i class="fas fa-file-contract"></i> Terms</a>
+      <a href="#privacy"><i class="fas fa-user-shield"></i> Privacy</a>
+      <a href="https://github.com/nikk-dev05" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://linkedin.com/in/nikhiltiwari" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="https://instagram.com/nikk_tiwari77" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+    </div>
+    <p class="footer-copy">Powered by ☕ and Code by <strong>Nikhil</strong>  | © 2025 <strong>StudySync</strong>. All rights reserved.</p>
+  </div>
+</footer>
+
+<button id="backToTop" title="Back to Top">↑</button>
+<script src="script.js"></script>
+</body>
+</html>
