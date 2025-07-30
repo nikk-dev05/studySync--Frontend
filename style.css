@@ -49,9 +49,7 @@ body {
   background-color: #e0e0e0;
   transform: translateX(-50%) rotate(20deg); 
 }
-html {
-  scroll-behavior: smooth;
-}
+
 
 
 .navbar {
@@ -659,3 +657,31 @@ html {
   color: green;
 }
 
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  overflow-x: hidden;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: all 0.3s ease;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
