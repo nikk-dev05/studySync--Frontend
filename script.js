@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   
-  const typedText = document.getElementById("typed-text");
+  /*const typedText = document.getElementById("typed-text");
   const phrases = [
     "Empower Your Learning Journey",
     "Achieve More with StudySync",
@@ -68,7 +68,45 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   typeEffect();
+*/
+const typedText = document.getElementById("typed-text");
+  const phrases = [
+    "Empower Your Learning Journey",
+    "Achieve More with StudySync",
+    "Study Anywhere, Anytime",
+    "Master Every Concept"
+  ];
 
+  let phraseIndex = 0;
+  let letterIndex = 0;
+  let isDeleting = false;
+  let delay = 120;
+
+  function typeEffect() {
+    const currentPhrase = phrases[phraseIndex];
+    if (isDeleting) {
+      letterIndex--;
+    } else {
+      letterIndex++;
+    }
+
+    typedText.textContent = currentPhrase.slice(0, letterIndex);
+
+    if (!isDeleting && letterIndex === currentPhrase.length) {
+      delay = 1500; // pause before deleting
+      isDeleting = true;
+    } else if (isDeleting && letterIndex === 0) {
+      isDeleting = false;
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+      delay = 300;
+    } else {
+      delay = isDeleting ? 50 : 120; // smooth typing speed
+    }
+
+    setTimeout(typeEffect, delay);
+  }
+
+  requestIdleCallback(typeEffect); // smoother execution
   
   const quotes = [
     "Success is the sum of small efforts, repeated day in and day out.",
