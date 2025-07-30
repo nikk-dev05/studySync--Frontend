@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Terms & Conditions - StudySync</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #fdfbfb, #ebedee);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .terms-container {
+      max-width: 800px;
+      background-color: #ffffff;
+      padding: 40px 45px;
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+      animation: slideIn 1s ease-in-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(60px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    h1 {
+      font-size: 2.3rem;
+      text-align: center;
+      margin-bottom: 25px;
+      color: #37474f;
+    }
+
+    .icon-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .icon-header i {
+      font-size: 2rem;
+      color: #3f51b5;
+      margin-right: 10px;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #444;
+      margin-bottom: 16px;
+    }
+
+    .btn-home {
+      margin-top: 30px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      font-size: 1rem;
+      color: #fff;
+      background: linear-gradient(45deg, #3f51b5, #5c6bc0);
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-home:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 18px rgba(63, 81, 181, 0.3);
+    }
+
+    @media (max-width: 600px) {
+      .terms-container {
+        padding: 25px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="terms-container">
+    <div class="icon-header">
+      <i class="fas fa-file-contract"></i>
+      <h1>Terms & Conditions</h1>
+    </div>
+    <p>
+      Welcome to StudySync. These terms and conditions outline the rules and regulations for the use of our platform.
+    </p>
+    <p>
+      By accessing this website, you accept these terms in full. Do not continue to use StudySync if you do not accept all of the terms and conditions stated on this page.
+    </p>
+    <p>
+      We reserve the right to modify these terms at any time. You are responsible for regularly reviewing these terms. Continued use of the service constitutes acceptance of any changes.
+    </p>
+    <p>
+      All content provided on this platform is for educational purposes. Unauthorized use or duplication of content is prohibited.
+    </p>
+    <a href="index.html" class="btn-home">
+      <i class="fas fa-scroll"></i> Return to Homepage
+    </a>
+  </div>
+</body>
+</html>
+

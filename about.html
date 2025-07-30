@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About - StudySync</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #f8f9fa);
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    .container {
+      padding: 3rem 2rem;
+      max-width: 900px;
+      margin: auto;
+      animation: slideFadeIn 1.5s ease;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      text-align: center;
+      margin-bottom: 1rem;
+      color: #004d40;
+      position: relative;
+    }
+
+    h1::after {
+      content: "";
+      width: 100px;
+      height: 4px;
+      background-color: #26a69a;
+      display: block;
+      margin: 0.5rem auto;
+      border-radius: 5px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      text-align: justify;
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 12px 24px;
+      background-color: #26a69a;
+      color: #fff;
+      font-size: 1rem;
+      text-decoration: none;
+      border-radius: 50px;
+      transition: background-color 0.3s, transform 0.3s;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .cta-button:hover {
+      background-color: #00796b;
+      transform: translateX(-50%) scale(1.05);
+    }
+
+    .scroll-icon {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      font-size: 2rem;
+      color: #26a69a;
+      background: #ffffff;
+      padding: 10px;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .scroll-icon:hover {
+      transform: scale(1.2);
+    }
+
+    @keyframes slideFadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .cta-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1><i class="fas fa-graduation-cap"></i> About StudySync</h1>
+    <p><strong>StudySync</strong> is a modern platform crafted to help students excel by offering AI-powered learning tools and curated study content. It bridges the gap between learners and the best educational content across the internet.</p>
+    <p>This project showcases <strong>real-world web development skills</strong> including HTML, CSS, JavaScript. Built by <strong>Nikhil</strong>  for tech and education.</p>
+    <a href="index.html" class="cta-button"><i class="fas fa-arrow-left"></i> Go to Dashboard</a>
+  </div>
+
+</body>
+</html>
