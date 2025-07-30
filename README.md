@@ -37,12 +37,11 @@ git clone https://github.com/nikk-dev05/StudySync-Frontend.git
 
 ## Live Demo
 
-You can view the live version of the project here:  
-[https://your-username.github.io/StudySync-Frontend/](https://nikk-dev05.github.io/StudySync-Frontend/)
+You can view the live version of the project here:  [https://nikk-dev05.github.io/StudySync-Frontend/]
 
 ## Author
 
 Nikhil Tiwari  
-GitHub: [https://github.com/your-username](https://github.com/nikk-dev05)
+GitHub: [https://github.com/nikk-dev05]
 
 
