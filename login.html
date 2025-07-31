@@ -5,57 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Login - StudySync</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
     body {
       background: linear-gradient(to right, #8e44ad, #3498db);
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      display: flex; justify-content: center; align-items: center;
       height: 100vh;
     }
 
     .form-container {
-      background: #fff;
-      padding: 30px 25px;
-      border-radius: 15px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-      width: 100%;
-      max-width: 400px;
+      background: #fff; padding: 30px 25px;
+      border-radius: 15px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      width: 100%; max-width: 400px;
       animation: slideIn 0.6s ease-out;
     }
 
     @keyframes slideIn {
-      from {
-        transform: translateY(-50px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
+      from { transform: translateY(-50px); opacity: 0; }
+      to   { transform: translateY(0); opacity: 1; }
     }
 
-    h2 {
-      text-align: center;
-      margin-bottom: 25px;
-      color: #333;
-    }
+    h2 { text-align: center; margin-bottom: 25px; color: #333; }
 
     input {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      transition: 0.3s ease;
+      width: 100%; padding: 12px; margin: 10px 0;
+      border-radius: 8px; border: 1px solid #ccc;
     }
 
     input:focus {
@@ -64,59 +38,39 @@
     }
 
     button {
-      width: 100%;
-      padding: 12px;
-      background: #8e44ad;
-      color: #fff;
-      font-weight: bold;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s ease;
+      width: 100%; padding: 12px; background: #8e44ad;
+      color: #fff; font-weight: bold; border: none;
+      border-radius: 8px; cursor: pointer;
     }
 
-    button:hover {
-      background: #6c3483;
-    }
+    button:hover { background: #6c3483; }
 
     .message, .error {
-      text-align: center;
-      margin-top: 12px;
-      font-size: 0.95em;
+      text-align: center; margin-top: 12px; font-size: 0.95em;
     }
 
-    .message {
-      color: green;
-    }
-
-    .error {
-      color: red;
-    }
-
-    @media (max-width: 500px) {
-      .form-container {
-        padding: 20px;
-      }
-    }
+    .message { color: green; }
+    .error { color: red; }
   </style>
 </head>
 <body>
   <div class="form-container">
-     <a href="index.html" class="home-button" title="Go to Home">
-    <i class="fas fa-home"></i>
     <h2>Login to StudySync</h2>
-    <input type="email" id="email" placeholder="Enter your Email" required />
-    <input type="password" id="password" placeholder="Enter your Password" required />
-    <button onclick="loginUser()">Login</button>
+    <form id="login-form">
+      <input type="email" id="email" placeholder="Enter your Email" required />
+      <input type="password" id="password" placeholder="Enter your Password" required />
+      <button type="submit">Login</button>
+    </form>
     <div class="message" id="login-message"></div>
     <div class="error" id="login-error"></div>
   </div>
 
   <script>
-    function loginUser() {
+    document.getElementById("login-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+
       const email = document.getElementById("email").value.trim();
       const password = document.getElementById("password").value;
-
       const msg = document.getElementById("login-message");
       const error = document.getElementById("login-error");
       msg.textContent = '';
@@ -129,11 +83,9 @@
         return;
       }
 
-      msg.textContent = `Welcome, ${storedUser.name}! `;
-setTimeout(() => {
-  window.location.href = "planner.html";
-}, 1000); 
-    }
+      msg.textContent = `Welcome, ${storedUser.name}!`;
+      setTimeout(() => window.location.href = "planner.html", 1000);
+    });
   </script>
 </body>
 </html>
