@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Help - StudySync</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom right, #eef2f3, #8e9eab);
+      color: #333;
+      min-height: 100vh;
+      padding-bottom: 100px;
+    }
+
+    header {
+      background: #4a90e2;
+      color: white;
+      padding: 1.2rem;
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      animation: slideDown 1s ease-out;
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .faq-section {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+
+    .faq {
+      background: white;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .faq-header {
+      padding: 1rem 1.5rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      background: #f7f9fc;
+    }
+
+    .faq-body {
+      padding: 0 1.5rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+
+    .faq.open .faq-body {
+      max-height: 300px;
+      padding: 1rem 1.5rem;
+    }
+
+    .faq.open .faq-header {
+      background: #e0ecff;
+    }
+
+    .back-top {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: #4a90e2;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 16px;
+      border-radius: 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      display: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .back-top.show {
+      display: block;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        font-size: 1.5rem;
+      }
+
+      .faq-header {
+        font-size: 1rem;
+      }
+
+      .back-top {
+        font-size: 14px;
+        padding: 8px 12px;
+      }
+    }
+    .go-planner {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  background: linear-gradient(135deg, #66bb6a, #43a047);
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  font-size: 15px;
+  border-radius: 30px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+  z-index: 999;
+}
+
+.go-planner:hover {
+  background: linear-gradient(135deg, #43a047, #2e7d32);
+  transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+  .go-planner {
+    font-size: 14px;
+    padding: 10px 16px;
+    bottom: 70px; 
+  }
+}
+
+  </style>
+</head>
+<body>
+  <header>Need Help? We're Here!</header>
+
+  <section class="faq-section">
+    <div class="faq">
+      <div class="faq-header">How do I create an account?</div>
+      <div class="faq-body">Click the “Get Started” button on the homepage and fill in your name, email, and password. Once submitted, your account is created instantly.</div>
+    </div>
+    <div class="faq">
+      <div class="faq-header">Can I update my personal details?</div>
+      <div class="faq-body">Yes, go to your dashboard > profile settings > update the necessary fields and click save.</div>
+    </div>
+    <div class="faq">
+      <div class="faq-header">Where can I see my learning history?</div>
+      <div class="faq-body">On your dashboard, you’ll find a section called “Your Progress” that contains a history of all your activities and completed lessons.</div>
+    </div>
+    <div class="faq">
+      <div class="faq-header">How to contact support?</div>
+      <div class="faq-body">Scroll down to the bottom of any page and click “Contact Us.” Fill out the support form and we’ll get back to you within 24 hours.</div>
+    </div>
+  </section>
+
+  <button class="back-top" onclick="scrollToTop()">↑ Back to Top</button>
+<button class="go-planner" onclick="goToPlanner()"> Go to Planner</button>
+
+  <script>
+    document.querySelectorAll(".faq-header").forEach(header => {
+      header.addEventListener("click", () => {
+        const faq = header.parentElement;
+        faq.classList.toggle("open");
+      });
+    });
+
+    const backTop = document.querySelector(".back-top");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        backTop.classList.add("show");
+      } else {
+        backTop.classList.remove("show");
+      }
+    });
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    function goToPlanner() {
+  window.location.href = "planner.html";
+}
+
+  </script>
+</body>
+</html>

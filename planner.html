@@ -1,206 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StudySync - Daily Planner</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daily Planner</title>
   <style>
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     body {
-      background: linear-gradient(to right, #8e44ad, #3498db);
-      color: #fff;
+      background: linear-gradient(to right, #c9d6ff, #e2e2e2);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 2rem;
+      padding: 0;
     }
-
-    h1 {
-      margin-bottom: 1.5rem;
-      font-size: 2.5rem;
-    }
-
-    .planner {
+    .navbar {
       width: 100%;
-      max-width: 500px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 15px;
-      padding: 1.5rem;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(10px);
-    }
-
-    .input-section {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 1rem;
-    }
-
-    input[type="text"] {
-      flex: 1;
-      padding: 0.7rem;
-      border: none;
-      border-radius: 10px;
-      outline: none;
-    }
-
-    button.add-btn {
-      padding: 0.7rem 1rem;
-      background: #27ae60;
-      border: none;
-      border-radius: 10px;
-      color: #fff;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    button.add-btn:hover {
-      background: #2ecc71;
-    }
-
-    ul.task-list {
-      list-style: none;
-    }
-
-    .task {
-      background: rgba(255, 255, 255, 0.2);
-      margin-bottom: 10px;
-      padding: 0.7rem 1rem;
-      border-radius: 10px;
+      background-color: #34495e;
+      padding: 15px 20px;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: bold;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      transition: 0.3s;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
 
-    .task.completed {
-      text-decoration: line-through;
-      opacity: 0.6;
-    }
-
-    .task .icons i {
-      cursor: pointer;
-      margin-left: 10px;
-      transition: transform 0.2s ease;
-    }
-
-    .task .icons i:hover {
-      transform: scale(1.2);
-    }
-
-    .home-btn {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      font-size: 1.8rem;
-      color: white;
+    .navbar a {
+      color: #ecf0f1;
       text-decoration: none;
-      transition: 0.3s;
+      margin-left: 20px;
     }
 
-    .home-btn:hover {
-      color: #f1c40f;
+    .navbar a:hover {
+      text-decoration: underline;
     }
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
-      .input-section {
-        flex-direction: column;
-      }
-      .home-btn {
-        font-size: 1.4rem;
-      }
+    
+    .header {
+      text-align: center;
+      margin: 40px 0 20px;
+    }
+
+    .greeting {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+
+    
+    .game-container {
+      width: 300px;
+      height: 300px;
+      background-color: #ffffff;
+      border: 2px solid #ccc;
+      border-radius: 12px;
+      position: relative;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      cursor: pointer;
+    }
+
+    .dot {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #e74c3c;
+      position: absolute;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .score {
+      margin-top: 20px;
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #333;
+    }
+
+    .home-button {
+      margin-top: 30px;
+      padding: 10px 25px;
+      background-color: #2980b9;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .home-button:hover {
+      background-color: #1c5984;
+    }
+
+    .game-over {
+      font-size: 1.4rem;
+      color: red;
+      margin-top: 15px;
     }
   </style>
 </head>
-
 <body>
-  <a href="index.html" class="home-btn" title="Back to Home">
-    <i class="fas fa-house"></i>
-  </a>
 
-  <h1>Daily Planner</h1>
-  <div class="planner">
-    <div class="input-section">
-      <input type="text" id="taskInput" placeholder="Enter your task...">
-      <button class="add-btn" onclick="addTask()">Add</button>
+  
+  <div class="navbar">
+    <div> <a href="day-planner.html">Daily Planner</a></div>
+    <div>
+  
+      <a href="about.html">About</a>
+      <a href="help.html">Help</a>
     </div>
-    <ul class="task-list" id="taskList"></ul>
   </div>
 
+  
+  <div class="header">
+    <div class="greeting" id="greeting">Loading...</div>
+  </div>
+
+  
+  <div class="game-container" id="gameContainer"></div>
+  <div class="score" id="score">Score: 0</div>
+  <div class="game-over" id="gameOver" style="display:none;"> Game Over! Click "Go to Home" to restart.</div>
+
+  <button class="home-button" onclick="location.href='index.html'">Go to Home</button>
+
   <script>
-    const taskInput = document.getElementById("taskInput");
-    const taskList = document.getElementById("taskList");
+    
+    const greetingEl = document.getElementById("greeting");
+    const name = localStorage.getItem("username") || "Guest";
+    const hour = new Date().getHours();
+    let timeOfDay = "Good Night";
+    if (hour >= 5 && hour < 12) timeOfDay = "Good Morning";
+    else if (hour >= 12 && hour < 17) timeOfDay = "Good Afternoon";
+    else if (hour >= 17 && hour < 21) timeOfDay = "Good Evening";
+    greetingEl.innerText = `${timeOfDay}, ${name}!`;
 
-    function loadTasks() {
-      const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-      tasks.forEach(task => renderTask(task.text, task.completed));
-    }
+    
+    const gameContainer = document.getElementById("gameContainer");
+    const scoreEl = document.getElementById("score");
+    const gameOverEl = document.getElementById("gameOver");
 
-    function saveTasks() {
-      const allTasks = [];
-      document.querySelectorAll(".task").forEach(taskEl => {
-        allTasks.push({
-          text: taskEl.querySelector("span").innerText,
-          completed: taskEl.classList.contains("completed")
-        });
-      });
-      localStorage.setItem("tasks", JSON.stringify(allTasks));
-    }
+    let score = 0;
+    let dot = null;
+    let gameActive = true;
 
-    function addTask() {
-      const taskText = taskInput.value.trim();
-      if (!taskText) return;
-      renderTask(taskText);
-      taskInput.value = "";
-      saveTasks();
-    }
+    function spawnDot() {
+      if (!gameActive) return;
 
-    function renderTask(text, completed = false) {
-      const li = document.createElement("li");
-      li.className = "task";
-      if (completed) li.classList.add("completed");
+      dot = document.createElement("div");
+      dot.classList.add("dot");
 
-      const span = document.createElement("span");
-      span.innerText = text;
+      const x = Math.random() * (270);
+      const y = Math.random() * (270);
+      dot.style.left = `${x}px`;
+      dot.style.top = `${y}px`;
 
-      const icons = document.createElement("div");
-      icons.className = "icons";
+      dot.onclick = (e) => {
+        e.stopPropagation(); 
+        score++;
+        scoreEl.innerText = `Score: ${score}`;
+        dot.remove();
+        setTimeout(spawnDot, 500);
+      };
+
+      gameContainer.appendChild(dot);
+
       
-      const doneBtn = document.createElement("i");
-      doneBtn.className = "fas fa-check-circle";
-      doneBtn.onclick = () => {
-        li.classList.toggle("completed");
-        saveTasks();
-      };
-
-      const deleteBtn = document.createElement("i");
-      deleteBtn.className = "fas fa-trash";
-      deleteBtn.onclick = () => {
-        li.remove();
-        saveTasks();
-      };
-
-      icons.appendChild(doneBtn);
-      icons.appendChild(deleteBtn);
-      li.appendChild(span);
-      li.appendChild(icons);
-      taskList.appendChild(li);
+      setTimeout(() => {
+        if (gameContainer.contains(dot)) {
+          dot.remove();
+          setTimeout(spawnDot, 500);
+        }
+      }, 2000);
     }
 
-    loadTasks();
-  </script>
-</body>
+  
+    gameContainer.addEventListener("click", function () {
+      if (!dot) return;
+    
+      if (gameActive) {
+        gameActive = false;
+        dot.remove();
+        gameOverEl.style.display = "block";
+      }
+    });
 
+    spawnDot();
+  </script>
+
+</body>
 </html>

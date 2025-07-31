@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Day Planner</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 2rem;
+    }
+
+    .planner {
+      background: #ffffff;
+      border-radius: 1.5rem;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
+      padding: 2rem;
+      animation: fadeIn 0.8s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+    }
+
+    .nav-buttons button {
+      background-color: #00acc1;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    .nav-buttons button:hover {
+      background-color: #007c91;
+    }
+
+    h2 {
+      font-size: 2rem;
+      text-align: center;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .greeting {
+      text-align: center;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: #555;
+    }
+
+    .task-input {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 1.5rem;
+    }
+
+    .task-input input {
+      flex: 1;
+      padding: 10px;
+      border: 2px solid #00acc1;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .task-input button {
+      padding: 10px 15px;
+      background: #00acc1;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .task-input button:hover {
+      background: #007c91;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      padding: 10px;
+      background: #f1faff;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+
+    li.done {
+      text-decoration: line-through;
+      color: #aaa;
+      background: #e0f2f1;
+    }
+
+    .task-list button {
+      background: none;
+      border: none;
+      color: #007c91;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    @media (max-width: 480px) {
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      .task-input input {
+        font-size: 0.9rem;
+      }
+
+      .nav-buttons {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="planner">
+    <div class="nav-buttons">
+      <button onclick="location.href='index.html'">Home</button>
+      <button onclick="location.href='planner.html'">Planner</button>
+    </div>
+
+    <h2>My Day Planner</h2>
+    <div class="greeting" id="greeting">Good Morning, User!</div>
+
+    <div class="task-input">
+      <input type="text" id="taskInput" placeholder="Add your task..." />
+      <button onclick="addTask()">Add</button>
+    </div>
+
+    <ul class="task-list" id="taskList"></ul>
+  </div>
+
+  <script>
+    const username = localStorage.getItem("username") || "Nikhil";
+    const hour = new Date().getHours();
+    let greet = "Good Morning";
+    if (hour >= 12 && hour < 17) greet = "Good Afternoon";
+    else if (hour >= 17) greet = "Good Evening";
+    document.getElementById("greeting").innerText = `${greet}, ${username}!`;
+
+
+    const taskList = document.getElementById("taskList");
+
+    function addTask() {
+      const input = document.getElementById("taskInput");
+      const taskText = input.value.trim();
+
+      if (taskText === "") return;
+
+      const li = document.createElement("li");
+      li.innerHTML = `
+        ${taskText}
+        <button onclick="toggleDone(this)">✓</button>
+      `;
+      taskList.appendChild(li);
+      input.value = "";
+    }
+
+    function toggleDone(btn) {
+      btn.parentElement.classList.toggle("done");
+    }
+  </script>
+</body>
+</html>
